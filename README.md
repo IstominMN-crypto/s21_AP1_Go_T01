@@ -217,7 +217,7 @@ We recommend using the testing package for writing your tests.
     
     c. `/n` means a line break, i.e. Enter.
 
-1. If the patient is not found, the program returns an error of type `UserNotFoundError` with the message `patient not found` (this must be implemented manually).
+1. If the patient is not found, the program returns an error of type `UserNotFoundError` with the message `user not found` (this must be implemented manually).
 
 Data is stored in memory only; long-term data persistence is not required.
 
