@@ -133,7 +133,7 @@ You need to implement a program that receives a list of words and a number K as 
 3. The program determines how many times each word appears in the input string.
 4. The program sorts the resulting array in descending order and returns the first K words.
 5. The delimiter between words is the space character.
-6. If the number of unique words is less than K, the program returns a list of len(words) unique words, sorted by frequency.
+6. If the number of unique words is less than K, the program returns a list of all unique words, sorted by frequency.
 7. If an empty string is given as input, the output must also be an empty string.
 8. A word is any sequence of characters separated by spaces.
 9. If multiple words have the same frequency, they must be sorted lexicographically.
@@ -217,7 +217,7 @@ We recommend using the testing package for writing your tests.
     
     c. `/n` means a line break, i.e. Enter.
 
-1. If the patient is not found, the program returns an error of type `UserNotFoundError` with the message `patient not found` (this must be implemented manually).
+1. If the patient is not found, the program returns an error of type `PatientNotFoundError` with the message `patient not found` (this must be implemented manually).
 
 Data is stored in memory only; long-term data persistence is not required.
 
