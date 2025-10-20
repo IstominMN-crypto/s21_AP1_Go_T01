@@ -2,7 +2,7 @@
 
 **Summary:** In this project, you will get to know the Go language, study the basics of the language, its syntax, and data types: int, string, slice, map, struct. You will work with input/output and learn how to write small Go programs to implement console utilities.
 
-💡 [Click here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) to share your feedback on this project. It’s anonymous and will help our team make learning better. We recommend completing the survey immediately after finishing the project.
+💡 [Click here](https:/\new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) to share your feedback on this project. It’s anonymous and will help our team make learning better. We recommend completing the survey immediately after finishing the project.
 
 ## Contents
 
@@ -199,23 +199,23 @@ We recommend using the testing package for writing your tests.
 
     b. The visit date is in the format YYYY-MM-DD. 
 
-    c. `Example: Save /n Ivanov Ivan Ivanovich /n orthopedist /n 2024-04-13`
+    c. `Example: Save \n Ivanov Ivan Ivanovich \n orthopedist \n 2024-04-13`
 
-    d. `/n` means a line break, i.e. Enter.
+    d. `\n` means a line break, i.e. Enter.
 
 1. The GetHistory operation allows viewing the patient's visit history. It takes the patient's full name and returns a list of specialization–date pairs.  
-    a. Example: `GetHistory /n Ivanov Ivan Ivanovich`
+    a. Example: `GetHistory \n Ivanov Ivan Ivanovich`
 
-    b. Output: `orthopedist 2024-04-13 /n neurologist 2024-05-24 /n`
+    b. Output: `orthopedist 2024-04-13 \n neurologist 2024-05-24 \n`
 
-    c. `/n` means a line break, i.e. Enter.
+    c. `\n` means a line break, i.e. Enter.
 
 1. The GetLastVisit operation returns the last visit to a specific specialist. It takes the patient’s full name and the doctor’s specialization and returns the last visit date.  
-    a. Example: `GetLastVisit /n Ivanov Ivan Ivanovich /n orthopedist`
+    a. Example: `GetLastVisit \n Ivanov Ivan Ivanovich \n orthopedist`
 
     b. Output: `2024-04-13`
     
-    c. `/n` means a line break, i.e. Enter.
+    c. `\n` means a line break, i.e. Enter.
 
 1. If the patient is not found, the program returns an error of type `PatientNotFoundError` with the message `patient not found` (this must be implemented manually).
 
