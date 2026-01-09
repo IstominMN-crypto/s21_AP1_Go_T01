@@ -8,20 +8,20 @@ func main() {
 	a := скан_число("Введите первый операнд:")
 	операция := скан_операция("Введите операцию (+, -, *, /):")
 	b := скан_число("Введите второй операнд:")
-	fmt.Print("Ответ: ")
+	//fmt.Print("Ответ: ")
 	switch операция {
 	case "+":
-		fmt.Println(a + b)
+		fmt.Println("Ответ: ", a+b)
 	case "-":
-		fmt.Println(a - b)
+		fmt.Println("Ответ: ", a-b)
 	case "*":
-		fmt.Println(a * b)
+		fmt.Println("Ответ: ", a*b)
 	case "/":
 		if b == 0 {
 			fmt.Println("Ошибка: деление на 0")
 			return
 		}
-		fmt.Printf("%.3f\n", a/b)
+		fmt.Printf("Ответ: %.3g\n", a/b)
 	}
 }
 
