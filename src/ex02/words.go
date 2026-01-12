@@ -14,7 +14,7 @@ func main() {
 	temp.Scan()
 	str := temp.Text()
 	for {
-		if _, err := fmt.Scan(&k); err != nil {
+		if _, err := fmt.Scan(&k); err != nil || k < 0 {
 			fmt.Println("Неверное число, повторите ввод")
 			continue
 		}
