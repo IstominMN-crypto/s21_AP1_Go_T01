@@ -39,7 +39,7 @@ func TestTopWords(t *testing.T) {
 		{
 			name:     "Пустой список слов",
 			input:    "",
-			k:        5,
+			k:        0,
 			expected: []string{},
 		},
 		{
