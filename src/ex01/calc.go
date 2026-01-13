@@ -1,7 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -39,14 +43,16 @@ func скан_операция(сообщение string) string {
 func скан_число(сообщение string) float64 {
 	for {
 		fmt.Println(сообщение)
-		var in string
-		fmt.Scanln(&in)
-		var value float64
-		_, err := fmt.Sscan(in, &value)
-		if err != nil {
+		scaner := bufio.NewScanner(os.Stdin)
+		scaner.Scan()
+		in := scaner.Text()
+		parts := strings.Fields(in)
+		f, err := strconv.ParseFloat(parts[0], 64)
+		if len(parts) > 1 || err != nil {
 			fmt.Println("Неверное значение")
 			continue
 		}
-		return value
+
+		return f
 	}
 }
