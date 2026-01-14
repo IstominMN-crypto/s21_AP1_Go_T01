@@ -20,7 +20,6 @@ func main() {
 		}
 		break
 	}
-
 	for _, c := range topWords(str, k) {
 		fmt.Printf("%s ", c)
 	}
@@ -28,7 +27,6 @@ func main() {
 }
 
 func topWords(str string, k int) []string {
-
 	s := map[string]int{}
 	words := strings.Fields(str)
 	for _, word := range words {

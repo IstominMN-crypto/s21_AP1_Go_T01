@@ -21,7 +21,6 @@ func main() {
 		}
 		fmt.Print("\n")
 	}
-
 }
 
 func input() []int {

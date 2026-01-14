@@ -8,6 +8,8 @@ import (
 	"time"
 )
 
+type PatientNotFoundError struct{}
+
 type vizit struct {
 	Specialization string
 	Date           time.Time
@@ -16,9 +18,11 @@ type vizit struct {
 func main() {
 	person := make(map[string][]vizit)
 	scaner := bufio.NewScanner(os.Stdin)
-outerLoop:
+	var m bool = false
 	for {
-		fmt.Println("Menu:\n1. Save\n2. GetHistory\n3. GetLastVisit\n4. Exit")
+		if m {
+			fmt.Println("Menu:\n1. Save\n2. GetHistory\n3. GetLastVisit\n4. Menu\n5. Exit")
+		}
 		scaner.Scan()
 		menu := strings.TrimSpace(scaner.Text())
 		switch menu {
@@ -32,29 +36,48 @@ outerLoop:
 			})
 		case "2", "GetHistory":
 			fio := input(scaner)
-			posehenie, _ := person[fio]
-			for _, p := range posehenie {
-				fmt.Println(p.Specialization, p.Date)
-			}
-			fmt.Println()
-		case "3", "GetLastVisit":
-			fio := input(scaner)
-			spc := input(scaner)
-			posehenie, _ := person[fio]
-			for _, p := range posehenie {
-				if p.Specialization == spc {
-					fmt.Println(p.Date)
+			posehenie, err := findFio(person, fio)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				for _, p := range posehenie {
+					fmt.Println(p.Specialization, p.Date.Format("2006-01-02"))
 				}
 			}
-		case "4", "Exit":
-			break outerLoop
+		case "3", "GetLastVisit":
+			fio := input(scaner)
+			posehenie, err := findFio(person, fio)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				spc := input(scaner)
+				for _, p := range posehenie {
+					if p.Specialization == spc {
+						fmt.Println(p.Date.Format("2006-01-02"))
+					}
+				}
+			}
+		case "4", "Menu":
+			m = !m
+		case "5", "Exit":
+			os.Exit(0)
 		}
 		fmt.Println()
 	}
-	fmt.Print("Итить колотить")
 }
 
 func input(scaner *bufio.Scanner) string {
 	scaner.Scan()
 	return strings.TrimSpace(scaner.Text())
+}
+func findFio(person map[string][]vizit, fio string) ([]vizit, error) {
+	posehenie, ok := person[fio]
+	if !ok {
+		return nil, PatientNotFoundError{}
+	} else {
+		return posehenie, nil
+	}
+}
+func (e PatientNotFoundError) Error() string {
+	return "patient not found"
 }
