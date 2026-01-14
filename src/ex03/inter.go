@@ -9,43 +9,38 @@ import (
 )
 
 func main() {
-	slice_1, ok_1 := input()
-	if ok_1 == false {
-		return
-	}
-	slice_2, ok_2 := input()
+	slice_1 := input()
+	slice_2 := input()
 	rez := []int{}
-	if ok_1 && ok_2 {
-		rez = inter(slice_1, slice_2)
-		if len(rez) == 0 {
-			fmt.Println("Empty intersection")
-		} else {
-			for _, v := range rez {
-				fmt.Print(v, " ")
-			}
-			fmt.Print("\n")
+	rez = intersection(slice_1, slice_2)
+	if len(rez) == 0 {
+		fmt.Println("Empty intersection")
+	} else {
+		for _, v := range rez {
+			fmt.Print(v, " ")
 		}
+		fmt.Print("\n")
 	}
+
 }
 
-func input() ([]int, bool) {
-	temp := bufio.NewScanner(os.Stdin)
-	temp.Scan()
-	words := strings.Fields(temp.Text())
-	Zzz := true
+func input() []int {
+	scaner := bufio.NewScanner(os.Stdin)
+	scaner.Scan()
+	words := strings.Fields(scaner.Text())
 	rez := make([]int, 0, len(words))
 	for _, w := range words {
 		n, err := strconv.Atoi(w)
 		if err != nil {
 			fmt.Println("Invalid input")
-			Zzz = false
+			os.Exit(0)
 		}
 		rez = append(rez, n)
 	}
-	return rez, Zzz
+	return rez
 }
 
-func inter(slice_1 []int, slice_2 []int) []int {
+func intersection(slice_1 []int, slice_2 []int) []int {
 	rez := []int{}
 	used := make(map[int]bool)
 	for _, v := range slice_1 {

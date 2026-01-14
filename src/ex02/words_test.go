@@ -62,14 +62,13 @@ func TestTopWords(t *testing.T) {
 		},
 	}
 
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			result := TopWords(tt.input, tt.k)
-
-			if !reflect.DeepEqual(result, tt.expected) {
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := topWords(test.input, test.k)
+			if !reflect.DeepEqual(result, test.expected) {
 				t.Errorf(
 					"expected %v, got %v",
-					tt.expected,
+					test.expected,
 					result,
 				)
 			}

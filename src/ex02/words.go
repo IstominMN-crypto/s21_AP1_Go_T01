@@ -21,13 +21,13 @@ func main() {
 		break
 	}
 
-	for _, c := range TopWords(str, k) {
+	for _, c := range topWords(str, k) {
 		fmt.Printf("%s ", c)
 	}
 	fmt.Print("\n")
 }
 
-func TopWords(str string, k int) []string {
+func topWords(str string, k int) []string {
 
 	s := map[string]int{}
 	words := strings.Fields(str)
