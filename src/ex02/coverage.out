@@ -1,0 +1,21 @@
+mode: set
+example.com/topkwords/words.go:11.13,16.6 5 0
+example.com/topkwords/words.go:16.6,17.50 1 0
+example.com/topkwords/words.go:17.50,19.12 2 0
+example.com/topkwords/words.go:21.3,21.8 1 0
+example.com/topkwords/words.go:23.2,23.37 1 0
+example.com/topkwords/words.go:23.37,25.3 1 0
+example.com/topkwords/words.go:26.2,26.17 1 0
+example.com/topkwords/words.go:29.43,32.29 3 1
+example.com/topkwords/words.go:32.29,33.29 1 1
+example.com/topkwords/words.go:33.29,35.4 1 1
+example.com/topkwords/words.go:35.9,37.4 1 1
+example.com/topkwords/words.go:39.2,40.19 2 1
+example.com/topkwords/words.go:40.19,42.3 1 1
+example.com/topkwords/words.go:43.2,43.39 1 1
+example.com/topkwords/words.go:43.39,44.31 1 1
+example.com/topkwords/words.go:44.31,46.4 1 1
+example.com/topkwords/words.go:47.3,47.27 1 1
+example.com/topkwords/words.go:49.2,49.19 1 1
+example.com/topkwords/words.go:49.19,51.3 1 1
+example.com/topkwords/words.go:52.2,52.17 1 1

@@ -28,13 +28,12 @@ func main() {
 	}
 }
 
-func скан_операция(сообщение string) string {
+func скан_операция(сообщение string) (in string) {
 	for {
 		fmt.Println(сообщение)
-		var in string
 		fmt.Scanln(&in)
 		if in == "+" || in == "-" || in == "*" || in == "/" {
-			return in
+			return
 		}
 		fmt.Println("Неверное значение")
 	}
